@@ -1,4 +1,6 @@
-acceptInvite = async (code, client) => {
+const request = require("request"),
+    inviteEndpoint = "https://discordapp.com/api/v6/invites/",
+    acceptInvite = async (code, client) => {
         const inviteEndpoint = 'https://discordapp.com/api/v6/invite/';
         request.post({
             url: `${inviteEndpoint}${code}`,
