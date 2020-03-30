@@ -6,7 +6,7 @@ const ownerids = [
 if (!ownerids.includes(msg.author.id)) return msg.channel.send("You must be an owner to use this commands!")
 try {
     let result = eval(`const run = async () => {${argJoin}};\nrun();`); // this allows for easy awaits and asyncs
-    while (result instanceof Promise) { / make sure it never returns a promise
+    while (result instanceof Promise) { // make sure it never returns a promise
         result = await result;
     }
     if (typeof result !== 'string') {
